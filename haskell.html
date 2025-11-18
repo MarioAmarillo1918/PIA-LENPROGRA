@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haskell - Lenguaje de Programación Puramente Funcional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .boton-regreso {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #3498db;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .boton-regreso:hover {
+            background-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #3498db;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+        
+        .haskell-logo {
+            font-size: 4rem;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #3498db;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #ebf5fb;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .comparison-item {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .haskell-side {
+            background-color: #ebf5fb;
+            border: 1px solid #3498db;
+        }
+        
+        .imperative-side {
+            background-color: #fdedec;
+            border: 1px solid #e74c3c;
+        }
+        
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .app-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #3498db;
+        }
+        
+        .app-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .ecosystem-item {
+            background-color: #ebf5fb;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .code-example {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid, .comparison, .applications-grid, 
+            .features-grid, .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="boton-regreso">← Volver a la Página Principal</a>
+        
+        <header>
+           
+            <h1>Haskell</h1>
+            <p class="subtitle">Lenguaje de Programación Puramente Funcional - Elegante y Robusto</p>
+        </header>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h2>¿Qué es Haskell?</h2>
+                <p>Haskell es un lenguaje de programación <strong>puramente funcional</strong> de propósito general, nombrado en honor al lógico <strong>Haskell Curry</strong>. Desarrollado a partir de 1990, representa la culminación de décadas de investigación en lenguajes funcionales y se ha convertido en el estándar de facto para la programación funcional pura.</p>
+                
+                <p>Basado fundamentalmente en el <strong>cálculo lambda tipado</strong>, Haskell introduce conceptos avanzados como evaluación perezosa, monadas para efectos secundarios y un sistema de tipos estático extremadamente poderoso que previene muchos errores en tiempo de compilación.</p>
+                
+                <div class="highlight">
+                    <p>"Haskell te obliga a pensar de manera diferente sobre la programación. Una vez que lo entiendes, cambia permanentemente tu forma de abordar problemas." - Usuario anónimo de Haskell</p>
+                </div>
+                
+                <h3>Características fundamentales:</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>Pureza funcional</strong>
+                        <p>Sin efectos secundarios - misma entrada siempre produce misma salida</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Evaluación perezosa</strong>
+                        <p>Las expresiones se evalúan solo cuando sus resultados son necesarios</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Sistema de tipos fuerte</strong>
+                        <p>Inferencia de tipos automática con verificación en tiempo de compilación</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Inmutabilidad</strong>
+                        <p>Todos los datos son inmutables por defecto</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Pattern matching</strong>
+                        <p>Descomposición elegante de estructuras de datos</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Type classes</strong>
+                        <p>Polimorfismo ad-hoc similar a interfaces pero más poderoso</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Filosofía y Diseño</h2>
+                <p>Haskell fue diseñado con el objetivo explícito de reunir las mejores características de los lenguajes funcionales en un sistema coherente y práctico. Su diseño refleja décadas de investigación académica en teoría de tipos y semántica de lenguajes de programación.</p>
+                
+                <h3>Principios de diseño:</h3>
+                <ul>
+                    <li><strong>Elegancia conceptual:</strong> Un pequeño conjunto de conceptos unificados</li>
+                    <li><strong>Seguridad por diseño:</strong> El sistema de tipos previene errores comunes</li>
+                    <li><strong>Expresividad:</strong> Capacidad de expresar abstracciones complejas de manera concisa</li>
+                    <li><strong>Composicionalidad:</strong> Las piezas pequeñas se combinan para formar sistemas grandes</li>
+                    <li><strong>Transparencia referencial:</strong> Las funciones pueden ser razonadas matemáticamente</li>
+                </ul>
+                
+                <h3>Ejemplo de código Haskell:</h3>
+                <div class="code-example">
+                    <pre>
+-- Función factorial recursiva
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+-- Función de orden superior
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x:xs) = f x : map f xs
+
+-- List comprehension
+pares = [x | x <- [1..100], even x]
+
+-- Uso de monadas para I/O
+main :: IO ()
+main = do
+    putStrLn "¿Cuál es tu nombre?"
+    nombre <- getLine
+    putStrLn $ "Hola, " ++ nombre ++ "!"
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Ecosistema y Herramientas</h2>
+            
+            <h3>Stack y Cabal</h3>
+            <p>Haskell cuenta con dos sistemas de build principales: <strong>Cabal</strong> (el sistema oficial) y <strong>Stack</strong> (una herramienta más moderna que simplifica el manejo de dependencias). Ambos permiten gestionar proyectos complejos con múltiples dependencias.</p>
+            
+            <h3>GHC (Glasgow Haskell Compiler)</h3>
+            <p>El compilador principal de Haskell, conocido por sus optimizaciones agresivas y soporte para extensiones del lenguaje. GHC es notable por:</p>
+            <ul>
+                <li>Compilación a código nativo altamente optimizado</li>
+                <li>Soporte para programación concurrente y paralela</li>
+                <li>Extensas opciones de optimización</li>
+                <li>Capacidad de generar librerías enlazables</li>
+            </ul>
+            
+            <h3>Librerías principales:</h3>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-item">
+                    <h4>Yesod</h4>
+                    <p>Framework web type-safe para aplicaciones robustas</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Lens</h4>
+                    <p>Biblioteca para manipulación composable de datos complejos</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Conduit</h4>
+                    <p>Streaming de datos con gestión automática de recursos</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Servant</h4>
+                    <p>Framework para APIs type-safe</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Aplicaciones en la Industria</h2>
+            
+            <h3>Empresas que usan Haskell:</h3>
+            <ul>
+                <li><strong>Facebook:</strong> Herramientas internas y sistema de spam filtering</li>
+                <li><strong>Google:</strong> Proyectos de investigación y herramientas internas</li>
+                <li><strong>Microsoft:</strong> Compilador de F# y herramientas de desarrollo</li>
+                <li><strong>GitHub:</strong> Sistema de análisis de código semántico</li>
+                <li><strong>Standard Chartered:</strong> Sistema de trading y riesgo financiero</li>
+                <li><strong>Barclays:</strong> Plataforma de derivados financieros</li>
+            </ul>
+            
+            <h3>Casos de uso destacados:</h3>
+            <div class="applications-grid">
+                <div class="app-item">
+                    <div class="app-icon">🔒</div>
+                    <p>Sistemas de Seguridad</p>
+                    <small>Verificación formal y criptografía</small>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">📊</div>
+                    <p>Análisis de Datos</p>
+                    <small>Procesamiento de datos financieros</small>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">⚡</div>
+                    <p>Compiladores</p>
+                    <small>Herramientas de desarrollo</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Comparación con Lenguajes Imperativos</h2>
+            
+            <div class="comparison">
+                <div class="comparison-item haskell-side">
+                    <h3>Haskell (Funcional Puro)</h3>
+                    <ul>
+                        <li>Énfasis en "qué" computar</li>
+                        <li>Datos inmutables</li>
+                        <li>Sin efectos secundarios</li>
+                        <li>Evaluación perezosa</li>
+                        <li>Pattern matching extensivo</li>
+                        <li>Recursión en lugar de loops</li>
+                        <li>Type inference automática</li>
+                        <li>Monadas para efectos</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item imperative-side">
+                    <h3>Lenguajes Imperativos</h3>
+                    <ul>
+                        <li>Énfasis en "cómo" computar</li>
+                        <li>Datos mutables</li>
+                        <li>Efectos secundarios omnipresentes</li>
+                        <li>Evaluación estricta</li>
+                        <li>Condicionales tradicionales</li>
+                        <li>Loops para repetición</li>
+                        <li>Tipado explícito frecuente</li>
+                        <li>Efectos integrados en el lenguaje</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Ventajas del enfoque funcional:</h3>
+            <div class="highlight">
+                <p>Haskell permite razonar sobre el código de manera matemática, facilitando la verificación formal, pruebas automatizadas y refactorización segura. La ausencia de efectos secundarios hace que el código sea más predecible y fácil de paralelizar.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Conceptos Avanzados</h2>
+            
+            <h3>Monadas y Efectos</h3>
+            <p>Las monadas son la solución elegante de Haskell para manejar efectos secundarios de manera pura. Permiten secuenciar operaciones con efectos mientras mantienen la pureza referencial.</p>
+            
+            <h3>Type Classes</h3>
+            <p>Sistema de polimorfismo ad-hoc que permite definir interfaces para tipos. Ejemplos comunes incluyen Eq, Ord, Show, y Num.</p>
+            
+            <h3>Lazy Evaluation</h3>
+            <p>Haskell no evalúa expresiones hasta que sus resultados son necesarios, permitiendo estructuras de datos infinitas y mejorando el rendimiento en muchos casos.</p>
+            
+            <div class="highlight">
+                <p><strong>Curva de aprendizaje:</strong> Haskell tiene una curva de aprendizaje empinada, pero los desarrolladores reportan que una vez superada, se vuelven mejores programadores en cualquier lenguaje.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Comunidad y Futuro</h2>
+            
+            <h3>Comunidad Académica y Industrial</h3>
+            <p>Haskell cuenta con una comunidad única que combina investigadores académicos y desarrolladores industriales. Esta sinergia asegura que las innovaciones teóricas se traduzcan en mejoras prácticas.</p>
+            
+            <h3>Eventos importantes:</h3>
+            <ul>
+                <li><strong>ICFP:</strong> International Conference on Functional Programming</li>
+                <li><strong>Haskell Symposium:</strong> Evento anual de la comunidad Haskell</li>
+                <li><strong>ZuriHac:</strong> Hackatón anual más grande del mundo para Haskell</li>
+            </ul>
+            
+            <h3>Futuro del lenguaje:</h3>
+            <p>Haskell continúa evolucionando con características como Linear Types, Dependent Types y mejor soporte para programación paralela y distribuida. Su influencia en otros lenguajes modernos como Rust, Swift y TypeScript es innegable.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Página informativa sobre Haskell - Lenguaje de Programación Puramente Funcional</p>
+    </footer>
+</body>
+</html>

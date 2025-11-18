@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A8 Programas Funcionales</title>
+  <style>
+    /* Estilos para justificar el texto */
+    p, li {
+      text-align: justify;
+    }
+    
+    /* Estilos para las referencias */
+    .no-linea {
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <img src="logo-izquierda.png" alt="Logo UANL" class="logo izquierda">
+
+  <div class="texto-header">
+    <h1>Universidad Autónoma de Nuevo León</h1>
+    <h2>Facultad de Ingeniería Mecánica y Eléctrica</h2>
+    <h2 class="tema-canva">Programas Funcionales</h2>
+    <a href="integrantes.html" class="boton-canva">Ver Integrantes</a>
+  </div>
+
+  <img src="logo-derecha.png" alt="Logo FIME" class="logo derecha">
+</header>
+
+
+<main>
+<section>
+  <h2>Objetivo del Proyecto</h2>
+  <p>
+    El propósito de este trabajo es comprender los principios fundamentales
+    de los lenguajes de programación, así como identificar sus principales características,
+    paradigmas y usos dentro del desarrollo de software moderno. 
+  </p>
+</section>
+
+  <section id="introduccion">
+    <h2>Introducción</h2>
+    <p>En la actualidad, la programación se ha convertido en una de las herramientas más importantes para el desarrollo tecnológico y científico. Existen diferentes paradigmas de programación, los cuales representan distintas formas de pensar y resolver problemas a través del código. Entre ellos, uno de los más relevantes y a la vez menos comprendidos es la programación funcional, una metodología que tiene sus bases en la lógica y en las matemáticas, y que busca escribir programas más limpios, claros y eficientes.</p>
+
+    <p>Los programas funcionales se caracterizan por centrarse en el uso de funciones como unidades fundamentales de construcción, evitando en lo posible los cambios de estado y los efectos secundarios que suelen presentarse en otros paradigmas, como el imperativo u orientado a objetos.</p>
+
+    <h3>Características principales:</h3>
+    <ul>
+      <li><strong>Funciones puras:</strong> Son funciones que, para una misma entrada, siempre devuelven la misma salida y no tienen efectos secundarios (como modificar variables externas o imprimir datos).</li>
+      <li><strong>Datos inmutables:</strong> Los datos no pueden ser modificados una vez creados. Si se necesita una versión modificada, se crea una nueva copia y se conserva el original.</li>
+      <li><strong>Enfoque declarativo:</strong> Se describe "qué" se quiere obtener en lugar de "cómo" hacerlo paso a paso.</li>
+      <li><strong>Transparencia referencial:</strong> Una expresión puede ser reemplazada por su valor sin cambiar el comportamiento del programa.</li>
+      <li><strong>Evita efectos secundarios:</strong> Al no alterar el estado del programa, se reducen errores y se facilita la concurrencia.</li>
+    </ul>
+
+    <p>El paradigma funcional tiene su origen en los fundamentos de la lógica matemática y el cálculo lambda, una teoría formal creada por Alonzo Church en la década de 1930. Este modelo matemático permitió representar funciones y su aplicación a argumentos, sentando las bases de lo que más tarde se convertiría en la programación funcional moderna. A diferencia de la programación imperativa, donde las instrucciones se ejecutan una tras otra modificando el estado del programa, en la programación funcional se busca describir las relaciones entre los datos y las operaciones que se realizan sobre ellos, sin alterar su valor original. Esta característica hace que los programas funcionales sean más predecibles, confiables y fáciles de depurar.</p>
+
+    <p>En los programas funcionales, las funciones son tratadas como "ciudadanos de primera clase", lo que significa que pueden asignarse a variables, pasarse como parámetros y devolverse como resultados de otras funciones. Esto permite crear programas modulares y reutilizables, donde las funciones pueden combinarse entre sí para formar soluciones más complejas. Además, la programación funcional fomenta el uso de funciones puras, es decir, funciones que siempre devuelven el mismo resultado cuando se les da la misma entrada y que no producen efectos secundarios, como modificar variables externas o interactuar con el entorno. Esta pureza funcional mejora la fiabilidad del software y facilita la implementación de procesos paralelos y concurrentes, algo muy importante en los sistemas modernos que necesitan alta eficiencia y rendimiento.</p>
+
+    <h3>Beneficios:</h3>
+    <ul>
+      <li>Facilita la validación y depuración del código.</li>
+      <li>Mayor predictibilidad y seguridad.</li>
+      <li>Código más modular y mantenible.</li>
+    </ul>
+  </section>
+
+  <section id="desarrollo">
+    <h2>Desarrollo</h2>
+    <p>El concepto de programación funcional se originó en los años 1930 con el cálculo lambda, una formalización matemática creada por Alonzo Church. Este paradigma influyó en lenguajes como Lisp, Haskell y Scala.</p>
+
+    <h3>Elementos técnicos y características avanzadas:</h3>
+
+    <h4>Funciones de Orden Superior</h4>
+    <p>Permiten usar funciones como datos. Es decir, se pueden pasar como parámetros o devolver como resultados.</p>
+    <ul>
+      <li><strong>Map:</strong> Transforma cada elemento de una lista.</li>
+      <li><strong>Filter:</strong> Filtra elementos que cumplan una condición.</li>
+      <li><strong>Reduce:</strong> Combina todos los elementos en un solo resultado.</li>
+    </ul>
+
+    <h4>Currying</h4>
+    <p>Consiste en descomponer una función que toma varios parámetros en una secuencia de funciones que toman uno solo. Permite crear funciones especializadas.</p>
+
+    <img src="images/currying.png" alt="Ejemplo de Currying" class="imagen-currying"> 
+
+    <h4>Recursividad</h4>
+    <p>Se usa en lugar de bucles. Una función se llama a sí misma para resolver un problema en partes más pequeñas.</p>
+
+    <img src="images/recursion.png" alt="Ejemplo de Recursividad" class="imagen-recursion">
+
+    <h4>Pattern Matching</h4>
+    <p>Permite que un programa decida qué hacer basado en la estructura de los datos. Es una forma más clara y concisa de manejar diferentes casos.</p>
+    
+    <img src="images/pattern_matching.png" alt="Ejemplo de Pattern Matching" class="imagen-pattern">
+
+    <h4>Manejo de efectos secundarios</h4>
+    <p>En programación funcional pura, las funciones no deben tener efectos secundarios. Para esto se usan <em>mónadas</em>, que son estructuras que encapsulan los efectos y permiten mantener la pureza del programa.</p>
+    
+    <img src="images/efectos_secundarios.png" alt="Ejemplo de Manejo de Efectos Secundarios" class="imagen-efecto">
+    
+    <h3>Aplicaciones prácticas</h3>
+    <p>La programación funcional se utiliza en sistemas expertos, razonamiento artificial, procesamiento de lenguaje natural y verificación formal de software. Gracias a su base matemática y naturaleza declarativa, facilita el desarrollo de sistemas confiables y predecibles.</p>
+<section class="lenguajes-funcionales">
+  <h2>Lenguajes en la Programación Funcional</h2>
+  <div class="cards">
+
+    <a href="haskell.html" class="card">
+      <h3>Haskell</h3>
+      <p>Lenguaje funcional basado en expresiones matemáticas.</p>
+    </a>
+
+    <a href="scala.html" class="card">
+      <h3>Scala</h3>
+      <p>Combina programación funcional y orientada a objetos.</p>
+    </a>
+
+    
+    <a href="lisp.html" class="card">
+      <h3>Lisp</h3>
+      <p>Lenguaje funcional histórico basado en listas.</p>
+    </a>
+
+  </div>
+</section>
+
+
+    <h3>Comparación con otros paradigmas</h3>
+    <ul>
+      <li><strong>Programación imperativa:</strong> Describe cómo ejecutar instrucciones paso a paso y modifica estados internos.</li>
+      <li><strong>Programación lógica:</strong> Usa reglas y hechos para deducir resultados; la funcional usa funciones matemáticas.</li>
+      <li><strong>Programación orientada a objetos:</strong> Se centra en clases y objetos con estado; la funcional evita el estado mutable y usa funciones puras.</li>
+    </ul>
+
+    <h3>Ventajas</h3>
+    <ul>
+      <li>Código más claro y predecible.</li>
+      <li>Menos errores y mayor facilidad de depuración.</li>
+      <li>Facilita la programación paralela y concurrente.</li>
+      <li>Alta reutilización de código.</li>
+      <li>Facilidad para razonar sobre el comportamiento del programa.</li>
+    </ul>
+
+    <h3>Desventajas</h3>
+    <ul>
+      <li>Curva de aprendizaje elevada.</li>
+      <li>Menor eficiencia en algunos casos.</li>
+      <li>No es ideal para tareas dependientes del estado o del hardware.</li>
+      <li>Disponibilidad limitada de programadores y librerías específicas.</li>
+    </ul>
+  </section>
+
+  <section id="conclusiones">
+    <h2>Conclusiones</h2>
+    <p>Más que una simple técnica de programación, el paradigma funcional representa una forma diferente de pensar sobre la resolución de problemas. Su adopción gradual en lenguajes multiparadigma evidencia su valor práctico, mientras que lenguajes puramente funcionales continúan demostrando su potencia en dominios específicos. El futuro del desarrollo software parece dirigirse hacia una integración armónica de paradigmas, donde los principios funcionales -especialmente la inmutabilidad y la composición- jugarán un papel cada vez más importante en la creación de sistemas robustos, mantenibles y escalables.</p>
+  </section>
+
+<section id="referencias">
+  <h2>Referencias</h2>
+  <ul>
+    <li>
+      <a href="https://www.mytaskpanel.com/programacion-funcional-beneficios/#:~:text=%C2%BFQu%C3%A9%20es%20la%20programaci%C3%B3n%20funcional,y%20la%20estabilidad%20del%20sistema." target="_blank" class="no-linea">
+        MyTaskPanel Consulting
+      </a>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/es/docs/Glossary/First-class_Function" target="_blank" class="no-linea">
+        Mozilla Developer Network
+      </a>
+    </li>
+    <li>
+      <a href="https://www.freecodecamp.org/news/functional-programming-in-javascript/" target="_blank" class="no-linea">
+        freeCodeCamp
+      </a>
+    </li>
+    <li>
+      <a href="https://elixirschool.com/es/lessons/basics/pattern_matching" target="_blank" class="no-linea">
+        Elixir School
+      </a>
+    </li>
+    <li>
+      <a href="https://pcweb.info/programacion-funcional-conceptos-ventajas-desventajas/#origenes-e-historia" target="_blank" class="no-linea">
+        Pcweb.info
+      </a>
+    </li>
+    <li>
+      <a href="https://ferestrepoca.github.io/paradigmas-de-programacion/progfun/funcional_teoria/index.html" target="_blank" class="no-linea">
+        Programación funcional
+      </a>
+    </li>
+    <li>
+      <a href="https://openwebinars.net/blog/que-es-la-programacion-funcional-y-sus-caracteristicas/" target="_blank" class="no-linea">
+        OpenWebinars.net
+      </a>
+    </li>
+  </ul>
+</section>
+
+
+</main>
+
+<footer>
+  <p><strong>Equipo:</strong> Jessica Lizbeth Salas Cruz, Jesús Mario Reyes Camarillo, Cristian Eliud Alvarado Saldaña, Esmeralda Cruz Arias</p>
+  <p><strong>Universidad Autónoma de Nuevo León - FIME</strong></p>
+</footer>
+
+</body>
+</html>

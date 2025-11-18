@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scala - Lenguaje de Programación Multiparadigma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #dc4225 0%, #c0392b 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .boton-regreso {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #dc4225;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .boton-regreso:hover {
+            background-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #c0392b;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #dc4225;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+        
+        .scala-logo {
+            font-size: 4rem;
+            margin: 20px 0;
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #c0392b;
+            border-bottom: 2px solid #dc4225;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #dc4225;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fdedec;
+            padding: 15px;
+            border-left: 4px solid #dc4225;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .comparison-item {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .scala-side {
+            background-color: #fdedec;
+            border: 1px solid #dc4225;
+        }
+        
+        .java-side {
+            background-color: #e8f4fd;
+            border: 1px solid #3498db;
+        }
+        
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .app-item {
+            background-color: #fef5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dc4225;
+        }
+        
+        .app-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #dc4225;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background-color: #fef5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #dc4225;
+        }
+        
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .ecosystem-item {
+            background-color: #fdedec;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .code-example {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .paradigm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .paradigm-item {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .functional-side {
+            background-color: #e8f6f3;
+            border: 1px solid #1abc9c;
+        }
+        
+        .oo-side {
+            background-color: #f4ecf7;
+            border: 1px solid #9b59b6;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid, .comparison, .applications-grid, 
+            .features-grid, .ecosystem-grid, .paradigm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="boton-regreso">← Volver a la Página Principal</a>
+        
+        <header>
+       
+            <h1>Scala</h1>
+            <p class="subtitle">Lenguaje de Programación Multiparadigma - La Evolución de Java</p>
+        </header>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h2>¿Qué es Scala?</h2>
+                <p>Scala (Scalable Language) es un lenguaje de programación moderno creado por <strong>Martin Odersky</strong> en 2004 que combina elegantemente <strong>programación funcional</strong> con <strong>programación orientada a objetos</strong>. Diseñado para ser conciso, type-safe y ejecutarse en la JVM, Scala representa una evolución natural de Java.</p>
+                
+                <p>El nombre "Scalable Language" refleja su diseño para crecer con las necesidades del usuario, desde pequeños scripts hasta sistemas empresariales masivos. Scala es completamente interoperable con Java, permitiendo el uso de cualquier librería Java existente.</p>
+                
+                <div class="highlight">
+                    <p>"Scala no es solo un lenguaje mejor Java, es un lenguaje que te hace un mejor programador." - Martin Odersky, creador de Scala</p>
+                </div>
+                
+                <h3>Características fundamentales:</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>Interoperabilidad Java</strong>
+                        <p>Acceso completo al ecosistema Java sin overhead</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Tipado estático con inferencia</strong>
+                        <p>Seguridad de tipos sin verbosidad excesiva</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Funciones de primera clase</strong>
+                        <p>Tratamiento uniforme de funciones y valores</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Pattern matching</strong>
+                        <p>Descomposición elegante de estructuras de datos</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Inmutabilidad</strong>
+                        <p>Collections inmutables por defecto</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>For-comprehensions</strong>
+                        <p>Sintaxis declarativa para trabajar con monadas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Filosofía de Diseño</h2>
+                <p>Scala fue diseñado con el objetivo de demostrar que la programación funcional y orientada a objetos pueden integrarse de manera coherente. Su diseño refleja años de investigación en teoría de tipos y diseño de lenguajes.</p>
+                
+                <h3>Principios de diseño:</h3>
+                <ul>
+                    <li><strong>Unificación conceptual:</strong> Objetos y funciones como conceptos unificados</li>
+                    <li><strong>Escalabilidad:</strong> Mismo lenguaje para scripts y sistemas empresariales</li>
+                    <li><strong>Expresividad:</strong> Máxima expresividad con mínimo código boilerplate</li>
+                    <li><strong>Seguridad:</strong> Sistema de tipos que previene errores en tiempo de compilación</li>
+                    <li><strong>Pragmatismo:</strong> Balance entre pureza teórica y utilidad práctica</li>
+                </ul>
+                
+                <h3>Ejemplo de código Scala:</h3>
+                <div class="code-example">
+                    <pre>
+// Definición de clase case (inmutable)
+case class Persona(nombre: String, edad: Int)
+
+// Función de orden superior
+val numeros = List(1, 2, 3, 4, 5)
+val duplicados = numeros.map(_ * 2)
+
+// Pattern matching
+def describirPersona(p: Persona): String = p match {
+    case Persona(n, e) if e < 18 => s"$n es menor de edad"
+    case Persona(n, e) if e < 65 => s"$n es adulto"
+    case Persona(n, _) => s"$n es adulto mayor"
+}
+
+// For-comprehension
+val pares = for {
+    n <- numeros
+    if n % 2 == 0
+} yield n * n
+
+// Programación asíncrona con Futures
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+
+val futuroResultado: Future[Int] = Future {
+    // Cálculo asíncrono
+    42
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Integración de Paradigmas</h2>
+            
+            <div class="paradigm-grid">
+                <div class="paradigm-item functional-side">
+                    <h3>Programación Funcional</h3>
+                    <ul>
+                        <li>Funciones como valores de primera clase</li>
+                        <li>Inmutabilidad por defecto</li>
+                        <li>Pattern matching avanzado</li>
+                        <li>Higher-order functions</li>
+                        <li>Type classes mediante implicits</li>
+                        <li>Monadas y for-comprehensions</li>
+                        <li>Tail recursion optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="paradigm-item oo-side">
+                    <h3>Programación Orientada a Objetos</h3>
+                    <ul>
+                        <li>Classes, traits y objects</li>
+                        <li>Herencia y polimorfismo</li>
+                        <li>Encapsulación y modularidad</li>
+                        <li>Mixin composition</li>
+                        <li>Singleton objects</li>
+                        <li>Abstract types</li>
+                        <li>Variance annotations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Unificación elegante:</h3>
+            <div class="highlight">
+                <p>En Scala, cada valor es un objeto y cada función es un valor. Esta unificación fundamental permite que los conceptos funcionales y orientados a objetos coexistan sin fricción. Por ejemplo, las operaciones de listas son métodos de objetos, pero se usan de manera funcional.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Ecosistema y Herramientas</h2>
+            
+            <h3>Build Tools</h3>
+            <p>Scala cuenta con <strong>sbt</strong> (Simple Build Tool) como herramienta de build principal, conocida por su configuración concisa y capacidades avanzadas de incremental compilation.</p>
+            
+            <h3>Frameworks principales:</h3>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-item">
+                    <h4>Akka</h4>
+                    <p>Toolkit para sistemas concurrentes y distribuidos basado en el modelo de actores</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Play Framework</h4>
+                    <p>Framework web full-stack para aplicaciones modernas</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Apache Spark</h4>
+                    <p>Motor de procesamiento de datos a gran escala escrito en Scala</p>
+                </div>
+                <div class="ecosystem-item">
+                    <h4>Kafka Streams</h4>
+                    <p>Procesamiento de streams en tiempo real</p>
+                </div>
+            </div>
+            
+            <h3>Librerías esenciales:</h3>
+            <ul>
+                <li><strong>Cats:</strong> Type classes para programación funcional</li>
+                <li><strong>ZIO:</strong> Programación asíncrona y concurrente</li>
+                <li><strong>Circe:</strong> Codificación/decodificación JSON</li>
+                <li><strong>Doobie:</strong> Acceso a bases de datos funcional</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>Aplicaciones en la Industria</h2>
+            
+            <h3>Empresas que usan Scala:</h3>
+            <ul>
+                <li><strong>Twitter:</strong> Backend y sistemas de timeline</li>
+                <li><strong>LinkedIn:</strong> Sistemas de recomendación y backend</li>
+                <li><strong>Netflix:</strong> Sistemas de recomendación y personalización</li>
+                <li><strong>Airbnb:</strong> Plataforma de búsqueda y reservas</li>
+                <li><strong>Uber:</strong> Sistemas de pricing y matching</li>
+                <li><strong>Databricks:</strong> Plataforma completa basada en Spark</li>
+                <li><strong>Morgan Stanley:</strong> Sistemas de trading y riesgo</li>
+            </ul>
+            
+            <h3>Casos de uso destacados:</h3>
+            <div class="applications-grid">
+                <div class="app-item">
+                    <div class="app-icon">📊</div>
+                    <p>Big Data</p>
+                    <small>Apache Spark y procesamiento distribuido</small>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">🌐</div>
+                    <p>Web Services</p>
+                   

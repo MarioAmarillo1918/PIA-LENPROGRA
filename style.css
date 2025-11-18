@@ -1,0 +1,233 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f6f8;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  color: #222;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  border-radius: 14px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: 0.3s ease;
+}
+
+main:hover {
+  transform: translateY(-3px);
+}
+
+/* ======== ENCABEZADO ======== */
+header {
+  background: linear-gradient(135deg, #0de37f, #0bb768);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+header h2 {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* ======== ESTILO CANVA TITULO ======== */
+.tema-canva {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* ======== BOTÓN ESTILO CANVA ======== */
+.boton-canva {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 34px;
+  background-color: #ffffff;
+  color: #0bb768;
+  border-radius: 40px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+  transition: 0.25s ease-in-out;
+  letter-spacing: 0.6px;
+}
+
+.boton-canva:hover {
+  background-color: #ffe0d5;
+  color: #ff6d40;
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* ======== SECCIONES ======== */
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  border-left: 6px solid #0de37f;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+}
+
+section ul {
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.4rem;
+}
+
+strong {
+  color: #0de37f;
+}
+
+/* ======== PIE DE PÁGINA ======== */
+footer {
+  background-color: #263238;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+footer p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 600px) {
+  main {
+    padding: 1.3rem;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  .tema-canva {
+    font-size: 1.4rem;
+  }
+}
+
+/* ======== TARJETAS DE LENGUAJES ======== */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 260px;
+  background-color: #ebfff3;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #c9f5dc;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: #0de37f;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* CAMBIO AQUÍ */
+  flex-wrap: wrap;
+}
+/* ======== ESTILO PARA ENLACES DE REFERENCIAS ======== */
+.no-linea {
+  text-decoration: none; 
+  color: inherit;       
+  cursor: pointer;      
+}
+
+.no-linea:hover {
+  color: #007BFF; 
+}
+/* ======== LOGOS EN HEADER  ======== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 2rem 3rem; /
+}
+
+header .logo {
+  height: 150px; 
+  width: auto;
+}
+
+header .texto-header {
+  flex: 1;
+  padding: 0 1rem; 
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  header .logo {
+    height: 80px; 
+    margin: 10px 0;
+  }
+
+  header .texto-header {
+    padding: 0;
+  }
+}
+.imagen-currying {
+  width: 80%; /* ajusta el tamaño según necesites */
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto; /* centra la imagen */
+}
+.imagen-recursion {
+  width: 80%; /* ajusta el tamaño según necesites */
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto; /* centra la imagen */
+}
+.imagen-pattern {
+  width: 80%; /* ajusta el tamaño según necesites */
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto; /* centra la imagen */
+}
+.imagen-efecto {
+  width: 80%; /* ajusta el tamaño según necesites */
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto; /* centra la imagen */
+}
